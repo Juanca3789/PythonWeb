@@ -1,7 +1,7 @@
 *.db
 
 *.py[cod]
-/WEB
-.web
+WEB/
+.web/
 
 __pycache__/
