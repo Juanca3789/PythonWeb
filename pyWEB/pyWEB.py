@@ -1,7 +1,9 @@
 import reflex as rx
 
+from pyWEB.components.footer import footer
 from pyWEB.components.navbar import navbar
 from pyWEB.views.header.header import header
+from pyWEB.views.links.links import links
 
 
 class State(rx.State):
@@ -10,7 +12,9 @@ class State(rx.State):
 def index() -> rx.Component:
     return rx.vstack(
         navbar(),
-        header()
+        header(),
+        links(),
+        footer()
     )
 
 app = rx.App()
