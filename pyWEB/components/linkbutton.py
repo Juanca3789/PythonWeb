@@ -1,22 +1,26 @@
 import reflex as rx
 
 import pyWEB.styles.styles as styles
+from pyWEB.styles.styles import Size
 
 
-def link_button(title: str, body: str,  url: str) -> rx.Component:
+def link_button(title: str, body: str,  url: str, img: str) -> rx.Component:
     return rx.link(
         rx.button(
             rx.hstack(
-                rx.icon(
-                    tag="attachment",
-                    width = styles.Size.DEFAULT.value,
-                    height = styles.Size.DEFAULT.value
+                rx.image(
+                    src=img,
+                    width = Size.DEFAULT.value,
+                    height = Size.DEFAULT.value,
+                    margin_left= Size.SMALL.value
                 ),
                 rx.vstack(
                     rx.text(title, style=styles.button_title_style),
-                    rx.text(body, style=styles.button_body_style),
+                    rx.text(body, style=styles.button_body_style,
+                            margin_top= "0px !important"),
                     align_items= "start"
-                )
+                ),
+                spacing= Size.MEDIUM.value
             )
         ),
         href= url,

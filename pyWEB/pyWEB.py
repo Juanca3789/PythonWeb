@@ -7,9 +7,8 @@ from pyWEB.styles.styles import Size as Size
 from pyWEB.views.header.header import header
 from pyWEB.views.links.links import links
 
-
-class State(rx.State):
-    pass
+#class State(rx.State):
+    #pass
 
 def index() -> rx.Component:
     return rx.box(
@@ -27,7 +26,11 @@ def index() -> rx.Component:
     )
 
 app = rx.App(
-    style= styles.BASE_STYLE
+    style= styles.BASE_STYLE,
+    stylesheets=[
+        "fonts/fonts.css"
+    ]
 )
-app.add_page(index)
+app.add_page(index,
+            title= "WEB Reflex")
 app.compile()
