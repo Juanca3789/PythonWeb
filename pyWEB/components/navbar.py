@@ -8,9 +8,12 @@ from pyWEB.styles.styles import Size as Size
 def navbar() -> rx.Component:
     return rx.hstack(
         rx.text(
-            "REFLEX",
-            rx.span(" APP",
-                    color = TextColor.FOOTER.value),
+            "REFLEX ",
+            rx.text(
+                "APP",
+                color = TextColor.FOOTER.value,
+                as_= "span"
+            ),
             color= TextColor.HEADER.value,
             style=Styles.navbar_title_style
         ),

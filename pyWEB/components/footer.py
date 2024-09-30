@@ -7,13 +7,20 @@ from pyWEB.styles.styles import Size
 
 
 def footer() -> rx.Component:
-    return rx.vstack(
-        rx.image(src="favicon.ico"),
-        rx.text(f"2005 - {datetime.date.today().year} Footer con ",
-                rx.span(
-                    rx.link("Enlace",
-                            href= "http://localhost:3000"),
-                            color=TextColor.FOOTER.value),
-                font_size = Size.MEDIUM.value),
-        margin_y=Size.MEDIUM.value
+    return rx.center(
+        rx.vstack(
+            rx.image(src="favicon.ico"),
+            rx.text(f"2005 - {datetime.date.today().year} Footer con ",
+                    rx.text(
+                        rx.link(
+                            "Enlace",
+                            href= "http://localhost:3000"
+                        ),
+                        color=TextColor.FOOTER.value,
+                        as_= "span"
+                    ),
+                    font_size = Size.MEDIUM.value),
+            margin_y=Size.MEDIUM.value,
+            align= "center"
+        )
     )

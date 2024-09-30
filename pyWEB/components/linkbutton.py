@@ -5,9 +5,9 @@ from pyWEB.styles.styles import Size
 
 
 def link_button(title: str, body: str,  url: str, img: str) -> rx.Component:
-    return rx.link(
-        rx.button(
-            rx.hstack(
+    return rx.button(
+        rx.link(
+            rx.center(
                 rx.image(
                     src=img,
                     width = Size.DEFAULT.value,
@@ -18,12 +18,13 @@ def link_button(title: str, body: str,  url: str, img: str) -> rx.Component:
                     rx.text(title, style=styles.button_title_style),
                     rx.text(body, style=styles.button_body_style,
                             margin_top= "0px !important"),
-                    align_items= "start"
+                    align_items= "start",
+                    spacing= Size.MIN.value
                 ),
                 spacing= Size.MEDIUM.value
-            )
-        ),
-        href= url,
-        is_external= True,
-        width= "100%"
+            ),
+            href= url,
+            is_external= True,
+            width= "100%"
+        )
     )

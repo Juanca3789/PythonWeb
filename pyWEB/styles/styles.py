@@ -10,6 +10,8 @@ MAX_WIDTH = "40%"
 
 #sizes
 class Size(Enum):
+    ZERO = "0em"
+    MIN = "0.2em"
     SMALL = "0.5em"
     MEDIUM = "0.8em"
     DEFAULT = "1em"
@@ -21,7 +23,7 @@ class Size(Enum):
 BASE_STYLE = {
     "font_family" : Font.DEFAULT.value,
     "background_color" : Color.BACKGROUND.value,
-    rx.Button: {
+    rx.button: {
         "width" : "100%",
         "height" : "100%",
         "padding" : Size.SMALL.value,
@@ -31,7 +33,7 @@ BASE_STYLE = {
         "white_space": "normal",
         "text_align" : "start"
     },
-    rx.Link: {
+    rx.link: {
         "text_decoration" : "none",
         "_hover" : {}
     }
